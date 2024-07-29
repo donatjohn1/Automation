@@ -35,7 +35,7 @@ public WebDriver driver;
 			{
 				System.out.println("All Windows\n"+temp);	
 				driver.switchTo().window(temp);
-				//System.out.println(driver.getTitle());
+				System.out.println(driver.getTitle());
 				title=driver.getTitle();
 			}
 			if(title.equals("WebDriver | Page Object Model"))
@@ -48,7 +48,10 @@ public WebDriver driver;
 			{
 				WebElement addToDo=driver.findElement(By.xpath("//input[@placeholder='Add new todo']"));
 				addToDo.sendKeys("Write code");
-			
+				WebElement text2=driver.findElement(By.xpath("//li[text()=' Go to potion class']"));
+				text2.click();
+				WebElement delete=driver.findElement(By.xpath("//i[@class='fa fa-trash']"));
+				delete.click();
 				
 			}
 			driver.switchTo().window(parentName);
